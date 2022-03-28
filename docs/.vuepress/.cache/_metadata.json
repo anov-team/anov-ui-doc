@@ -1,0 +1,36 @@
+{
+  "hash": "667add69",
+  "browserHash": "ce906e7f",
+  "optimized": {
+    "vue": {
+      "file": "/Users/limeng/Desktop/project/2022/anov-ui-doc/docs/.vuepress/.cache/vue.js",
+      "src": "/Users/limeng/Desktop/project/2022/anov-ui-doc/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js",
+      "needsInterop": false
+    },
+    "vue-router": {
+      "file": "/Users/limeng/Desktop/project/2022/anov-ui-doc/docs/.vuepress/.cache/vue-router.js",
+      "src": "/Users/limeng/Desktop/project/2022/anov-ui-doc/node_modules/vue-router/dist/vue-router.esm-bundler.js",
+      "needsInterop": false
+    },
+    "@vue/devtools-api": {
+      "file": "/Users/limeng/Desktop/project/2022/anov-ui-doc/docs/.vuepress/.cache/@vue_devtools-api.js",
+      "src": "/Users/limeng/Desktop/project/2022/anov-ui-doc/node_modules/@vue/devtools-api/lib/esm/index.js",
+      "needsInterop": false
+    },
+    "@vueuse/core": {
+      "file": "/Users/limeng/Desktop/project/2022/anov-ui-doc/docs/.vuepress/.cache/@vueuse_core.js",
+      "src": "/Users/limeng/Desktop/project/2022/anov-ui-doc/node_modules/@vueuse/core/index.mjs",
+      "needsInterop": false
+    },
+    "nprogress": {
+      "file": "/Users/limeng/Desktop/project/2022/anov-ui-doc/docs/.vuepress/.cache/nprogress.js",
+      "src": "/Users/limeng/Desktop/project/2022/anov-ui-doc/node_modules/nprogress/nprogress.js",
+      "needsInterop": true
+    },
+    "@vuepress/shared": {
+      "file": "/Users/limeng/Desktop/project/2022/anov-ui-doc/docs/.vuepress/.cache/@vuepress_shared.js",
+      "src": "/Users/limeng/Desktop/project/2022/anov-ui-doc/node_modules/@vuepress/shared/lib/esm/index.js",
+      "needsInterop": false
+    }
+  }
+}

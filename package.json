@@ -1,0 +1,25 @@
+{
+  "name": "anov-ui-doc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anov-team/anov-ui-doc.git"
+  },
+  "author": "limeng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anov-team/anov-ui-doc/issues"
+  },
+  "homepage": "https://github.com/anov-team/anov-ui-doc#readme",
+  "devDependencies": {
+    "@vuepress/plugin-container": "^2.0.0-beta.8",
+    "sass-loader": "^12.6.0",
+    "vuepress": "^2.0.0-beta.36"
+  }
+}
