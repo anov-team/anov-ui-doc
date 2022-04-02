@@ -1,12 +1,21 @@
 export const data = {
   "key": "v-6ec8569b",
   "path": "/components/design.html",
-  "title": "设计原则",
+  "title": "组件",
   "lang": "zh-CN",
   "frontmatter": {},
   "excerpt": "",
   "headers": [],
-  "git": {},
+  "git": {
+    "updatedTime": 1648429876000,
+    "contributors": [
+      {
+        "name": "lfourg",
+        "email": "limengnew@163.com",
+        "commits": 1
+      }
+    ]
+  },
   "filePathRelative": "components/design.md"
 }
 

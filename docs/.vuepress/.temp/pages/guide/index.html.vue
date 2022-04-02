@@ -15,13 +15,13 @@
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">git</span> clone https://github.com/xxxxx/anov-ui.git
 <span class="token function">npm</span> <span class="token function">install</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ol start="3">
-<li>导出组件 src/index.js</li>
+<li>生成入口文件<em>src/index.js</em></li>
 </ol>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">npm</span> run build:file
 </code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br></div></div><ol start="4">
 <li>启动项目</li>
 </ol>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">npm</span> run dev
-</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br></div></div><h2 id="开发组件" tabindex="-1"><a class="header-anchor" href="#开发组件" aria-hidden="true">#</a> 开发组件</h2>
-<p>当项目启动以后，你就进入了正式的组件开发流程了。但是，请先别动手写代码，花一些时间熟悉我们的<RouterLink to="/guide/dirtree.html#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84">目录结构</RouterLink>和<RouterLink to="/guide/devrule.html">基本规则</RouterLink>是非常必要的。</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br></div></div><h2 id="组件开发" tabindex="-1"><a class="header-anchor" href="#组件开发" aria-hidden="true">#</a> 组件开发</h2>
+<p>当项目启动以后，你就进入了正式的组件开发流程了，您需要花一些时间熟悉组件库的<RouterLink to="/guide/dirtree.html">目录结构</RouterLink>、<RouterLink to="/guide/file.html">组件要素</RouterLink>，以及<RouterLink to="/guide/type.html">类型介绍</RouterLink>。</p>
 </template>

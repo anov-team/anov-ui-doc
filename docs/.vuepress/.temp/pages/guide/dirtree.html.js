@@ -6,7 +6,16 @@ export const data = {
   "frontmatter": {},
   "excerpt": "",
   "headers": [],
-  "git": {},
+  "git": {
+    "updatedTime": 1648429876000,
+    "contributors": [
+      {
+        "name": "lfourg",
+        "email": "limengnew@163.com",
+        "commits": 1
+      }
+    ]
+  },
   "filePathRelative": "guide/dirtree.md"
 }
 

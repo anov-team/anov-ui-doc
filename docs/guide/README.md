@@ -23,7 +23,7 @@ git clone https://github.com/xxxxx/anov-ui.git
 npm install
 ```
 
-3. 导出组件 src/index.js
+3. 生成入口文件*src/index.js*
 
 ```bash
 npm run build:file
@@ -35,6 +35,6 @@ npm run build:file
 npm run dev
 ```
 
-## 开发组件
+## 组件开发
 
-当项目启动以后，你就进入了正式的组件开发流程了。但是，请先别动手写代码，花一些时间熟悉我们的[目录结构](./dirtree.md#目录结构)和[基本规则](./devrule.md)是非常必要的。
+当项目启动以后，你就进入了正式的组件开发流程了，您需要花一些时间熟悉组件库的[目录结构](./dirtree.md)、[组件要素](./file.md)，以及[类型介绍](./type.md)。

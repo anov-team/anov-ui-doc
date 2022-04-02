@@ -27,20 +27,31 @@ export const themeData = {
         "children": [
           "/guide/README.md",
           "/guide/dirtree.md",
-          "/guide/file.md"
+          "/guide/file.md",
+          "/guide/type.md",
+          "/guide/group.md",
+          "/guide/theme.md"
         ]
       }
     ],
     "/components/": [
       {
+        "text": "设计原则",
+        "children": [
+          "/components/README.md"
+        ]
+      },
+      {
         "text": "组件",
         "children": [
-          "/components/design.md"
+          "/components/introduce.md"
         ]
       }
     ]
   },
   "editLink": false,
+  "lastUpdatedText": "上次更新",
+  "contributorsText": "贡献者",
   "locales": {
     "/": {
       "selectLanguageName": "English"
@@ -51,9 +62,7 @@ export const themeData = {
   "selectLanguageAriaLabel": "Select language",
   "editLinkText": "Edit this page",
   "lastUpdated": true,
-  "lastUpdatedText": "Last Updated",
   "contributors": true,
-  "contributorsText": "Contributors",
   "notFound": [
     "There's nothing here.",
     "How did we get here?",

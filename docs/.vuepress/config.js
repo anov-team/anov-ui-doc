@@ -1,3 +1,5 @@
+const { path } = require('@vuepress/utils')
+
 module.exports = {
   // 站点配置
   base: "/",
@@ -37,17 +39,24 @@ module.exports = {
       "/guide/": [
         {
           text: "指南",
-          children: ["/guide/README.md", "/guide/dirtree.md", "/guide/file.md"],
+          children: ["/guide/README.md", "/guide/dirtree.md", "/guide/file.md", "/guide/type.md","/guide/group.md","/guide/theme.md"],
         },
       ],
       "/components/": [
         {
+          text: "设计原则",
+          children: ["/components/README.md"],
+        },
+        {
           text: "组件",
-          children: ["/components/design.md"],
+          children: ["/components/introduce.md"],
         },
       ],
+     
     },
     editLink: false, //是否启用 编辑此页 链接
+    lastUpdatedText: '上次更新',
+    contributorsText: '贡献者',
   },
   plugins: [
     [
@@ -58,5 +67,12 @@ module.exports = {
         after: () => "</code></pre>",
       },
     ],
+    [
+      '@vuepress/register-components',
+      {
+        componentsDir: path.resolve(__dirname, './components'),
+      },
+    ],
   ],
 };
+

@@ -26,12 +26,21 @@ export const data = {
     },
     {
       "level": 2,
-      "title": "开发组件",
-      "slug": "开发组件",
+      "title": "组件开发",
+      "slug": "组件开发",
       "children": []
     }
   ],
-  "git": {},
+  "git": {
+    "updatedTime": 1648429876000,
+    "contributors": [
+      {
+        "name": "lfourg",
+        "email": "limengnew@163.com",
+        "commits": 1
+      }
+    ]
+  },
   "filePathRelative": "guide/README.md"
 }
 
