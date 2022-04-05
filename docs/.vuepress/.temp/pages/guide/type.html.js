@@ -140,8 +140,14 @@ export const data = {
     }
   ],
   "git": {
-    "updatedTime": null,
-    "contributors": []
+    "updatedTime": 1648890668000,
+    "contributors": [
+      {
+        "name": "lfourg",
+        "email": "limengnew@163.com",
+        "commits": 1
+      }
+    ]
   },
   "filePathRelative": "guide/type.md"
 }

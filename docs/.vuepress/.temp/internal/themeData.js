@@ -44,7 +44,69 @@ export const themeData = {
       {
         "text": "组件",
         "children": [
-          "/components/introduce.md"
+          {
+            "text": "图表",
+            "children": [
+              "/components/chart/line.md",
+              "/components/chart/bar.md",
+              "/components/chart/pie.md",
+              "/components/chart/radar.md",
+              "/components/chart/gauge.md",
+              "/components/chart/pictograph.md",
+              "/components/chart/wordcloud.md",
+              "/components/chart/bubble.md",
+              "/components/chart/other.md"
+            ]
+          },
+          {
+            "text": "文字",
+            "children": [
+              "/components/text/text.md",
+              "/components/text/indicator.md",
+              "/components/text/weather.md"
+            ]
+          },
+          {
+            "text": "列表",
+            "children": [
+              "/components/list/table.md",
+              "/components/list/list.md"
+            ]
+          },
+          {
+            "text": "图片",
+            "children": [
+              "/components/deck/img.md",
+              "/components/deck/header.md",
+              "/components/deck/title.md",
+              "/components/deck/streamer.md",
+              "/components/deck/icon.md",
+              "/components/deck/shape.md"
+            ]
+          },
+          {
+            "text": "媒体",
+            "children": [
+              "/components/video/video.md"
+            ]
+          },
+          {
+            "text": "地图",
+            "children": [
+              "/components/map/echarts.md"
+            ]
+          },
+          {
+            "text": "控件",
+            "children": [
+              "/components/control/btn.md",
+              "/components/control/tab.md",
+              "/components/control/timeline.md",
+              "/components/control/dropdown.md",
+              "/components/control/iframe.md",
+              "/components/control/grid.md"
+            ]
+          }
         ]
       }
     ]

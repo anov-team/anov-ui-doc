@@ -40,7 +40,7 @@
 </tbody>
 </table>
 <h2 id="简单分组" tabindex="-1"><a class="header-anchor" href="#简单分组" aria-hidden="true">#</a> 简单分组</h2>
-<p>提供<strong>基础属性</strong>、<strong>高级属性</strong>二个组，基础属性组默认展开。</p>
+<p>🌰 提供基础属性、高级属性二个组，基础属性组默认展开。</p>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
   <span class="token function">getData</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token punctuation">{</span>
@@ -91,7 +91,7 @@
 </blockquote>
 <img :src="$withBase('/images/guide/group/baseGroup.png')" alt="简单分组">
 <h2 id="嵌套分组" tabindex="-1"><a class="header-anchor" href="#嵌套分组" aria-hidden="true">#</a> 嵌套分组</h2>
-<p>提供<strong>基础属性</strong>组下面嵌套<strong>子分组</strong>，基础属性组、子分组默认都展开。</p>
+<p>🌰 提供 基础属性 组下面嵌套 子分组，基础属性组、子分组默认都展开。</p>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
   <span class="token function">getData</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token punctuation">{</span>
