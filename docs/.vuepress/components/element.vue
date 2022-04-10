@@ -21,7 +21,7 @@ import Lottie from "lottie-web";
 let props = defineProps({
   data: [],
 });
-let basePath = "http://127.0.0.1:8080/#/docs/";
+let basePath = "https://lfourg.github.io/anov-ui-pro/#/docs/";
 let data = ref(props.data);
 
 function load(item) {
@@ -35,7 +35,7 @@ onMounted(() => {
       renderer: "svg",
       loop: true,
       autoplay: true,
-      path: "/line3.json", // the path to the animation json
+      path: "/anov-ui-doc/line3.json", // the path to the animation json
     });
   });
 });
@@ -44,13 +44,13 @@ onMounted(() => {
 <style scoped lang="scss">
 @keyframes fontChange {
   0% {
-    transform: scale(.8);
+    transform: scale(0.8);
   }
   50% {
     transform: scale(0.6);
   }
   100% {
-    transform: scale(.8);
+    transform: scale(0.8);
   }
 }
 .comp {
@@ -70,7 +70,7 @@ onMounted(() => {
       line-height: 16px;
       bottom: 5px;
       right: 3px;
-      transform: scale(.8);
+      transform: scale(0.8);
       animation: fontChange 3s infinite alternate;
       position: absolute;
     }

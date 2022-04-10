@@ -1,6 +1,6 @@
 # 类型介绍
 
-您可以通过 *config.js* 外观描述中定义的 type 字段，来定义控件的类型和配置。
+您可以通过 _config.js_ 外观描述中定义的 type 字段，来定义控件的类型和配置。
 
 ## 类型概览
 
@@ -23,13 +23,13 @@ type 字段支持以下类型：
 |            | [media](#media)                 | 媒体资源上传                                                     |
 |            | [unit](#unit)                   | 单位，支持自定义单位项。                                         |
 |            | [icon](#icon)                   | 图标选择器                                                       |
+|            | [code](#code)                   | 自定义内容，返回一个 render 函数。                               |
 | 组合类型   | [radius](#radius)               | 圆角，由四个输入框组成，可定制左上、右上、右下、左下四个圆角值。 |
 |            | [margin](#margin)               | 外边框，由四个输入框组成，可定制上右下左四个外边距值。           |
 |            | [padding](#padding)             | 内边框，由四个输入框组成，可定制上右下左四个内边距值。           |
 |            | [size](#padding)                | 定义容器尺寸                                                     |
 |            | [textStyle](#textstyle)         | 文本样式设置，可以设置字体大小、颜色、粗细、是否斜体、对齐方式。 |
-| 自定义类型 | [code](#code)                   | 自定义内容，返回一个 render 函数。                               |
-|            | [slot](#slot)                   | 预留插槽                                                         |
+| 自定义类型 | slot                            | 预留插槽                                                         |
 
 <script setup>
 
@@ -529,6 +529,10 @@ let customType={
 
 <guide-type-detail :config="baseType.icon"  :src="$withBase(baseType.icon.img)"/>
 
+## code
+
+<guide-type-detail :config="customType.code"  :src="$withBase(customType.code.img)"/>
+
 ## radius
 
 <guide-type-detail :config="groupType.radius"  :src="$withBase(groupType.radius.img)"/>
@@ -548,7 +552,3 @@ let customType={
 ## textStyle
 
 <guide-type-detail :config="groupType.textStyle"  :src="$withBase(groupType.textStyle.img)"/>
-
-## code
-
-<guide-type-detail :config="customType.code"  :src="$withBase(customType.code.img)"/>

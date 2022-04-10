@@ -2,7 +2,7 @@ const { path } = require("@vuepress/utils");
 
 module.exports = {
   // 站点配置
-  base: "/",
+  base: "/anov-ui-doc/",
   lang: "zh-CN",
   title: "ANOV-UI",
   description:
@@ -28,10 +28,6 @@ module.exports = {
       {
         text: "主题",
         link: "/theme/",
-      },
-      {
-        text: "资源",
-        link: "/resource/",
       },
     ],
     sidebarDepth: 1, //0 来禁用所有级别的页面标题  1 来包含 <h2> 标题  2 来包含 <h2> 和 <h3> 标题

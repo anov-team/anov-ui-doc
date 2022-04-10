@@ -21,7 +21,7 @@
       </tr>
       <template v-if="item.children">
         <tr>
-          <td colspan="6" style="font-weight:bold;">{{item.children.description}}</td>
+          <td colspan="6" style="font-weight:bold;">{{ item.children.description }}</td>
         </tr>
         <tr v-for="(citem, cindex) in item.children.files" :key="cindex">
           <td>{{ citem.name }}</td>
@@ -34,14 +34,11 @@
       </template>
     </template>
   </table>
-  <span class="title">值说明：</span>
-  <pre
-    v-if="config.value"
-    class="language-javascript"
-  ><code>{{ config.value }}</code></pre>
   <span class="title">配置示例：</span>
   <img :src="src" />
   <pre class="language-javascript"><code>{{ config.code }}</code></pre>
+  <span class="title">值说明：</span>
+  <pre v-if="config.value" class="language-javascript"><code>{{ config.value }}</code></pre>
 </template>
 
 <script setup>
