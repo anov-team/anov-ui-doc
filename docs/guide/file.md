@@ -275,9 +275,11 @@ export default {
 ```
 :::
 
-## 导出类型下组件
+## 导出组件
 
-*components.json*文件是导出类别下所有组件，格式如下：
+导出组件分二步，首先在组件类别目录下的 *components.json* 文件中导出组件，第二步在 *src/components.json* 文件中导出这个类别的组件。我们这样做的目的，我们不需要在入口文件 *src/index.js*  手动
+
+* 在组件类别目录下的 *components.json* 文件中导出组件，格式如下：
 
 ```json {11,22}
 {
