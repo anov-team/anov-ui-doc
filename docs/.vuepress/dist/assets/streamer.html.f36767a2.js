@@ -1,0 +1,1 @@
+const e={key:"v-0d8695b4",path:"/components/deck/streamer.html",title:"\u52A8\u753B",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1649168746e3,contributors:[{name:"lfourg",email:"limengnew@163.com",commits:1}]},filePathRelative:"components/deck/streamer.md"};export{e as data};

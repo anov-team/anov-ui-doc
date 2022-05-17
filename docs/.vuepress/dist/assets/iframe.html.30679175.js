@@ -1,0 +1,1 @@
+const e={key:"v-abb1d87a",path:"/components/control/iframe.html",title:"iframe",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1649168746e3,contributors:[{name:"lfourg",email:"limengnew@163.com",commits:1}]},filePathRelative:"components/control/iframe.md"};export{e as data};

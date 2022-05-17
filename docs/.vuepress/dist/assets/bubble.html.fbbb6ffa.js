@@ -1,0 +1,1 @@
+const t={key:"v-3534bbdc",path:"/components/chart/bubble.html",title:"\u6C14\u6CE1\u56FE",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1649168746e3,contributors:[{name:"lfourg",email:"limengnew@163.com",commits:1}]},filePathRelative:"components/chart/bubble.md"};export{t as data};

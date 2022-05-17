@@ -13,7 +13,7 @@
 │   │   ├── `normal` _(**常规表格**)_
 │   │   │   ├── index.vue _(**视图**)_
 │   │   │   ├── config.js _(**配置文件**)_
-│   │   ├── `top` _(**TOP表格**)_
+│   │   ├── `top` _(**TOP 表格**)_
 │   │   │   ├── index.vue
 │   │   │   ├── config.js
 │   │   ├── components.json _(**导出目录下所有组件**)_
@@ -23,19 +23,18 @@
 
 您通过 _config.js_ 文件中的`getData`、`getDataDes`函数，来定义外观面板、数据面板、交互面板的显示。
 
-
 ```js {2,8}
 export default {
   getData() {
     return {
-      option: {},    //外观面板数据
-      data: [],      //静态数据 非必须
+      option: {}, //外观面板数据
+      data: [], //静态数据 非必须
     };
   },
   getDataDes() {
     return {
-      optionDes: {},  //外观面板描述
-      sourceDes: {},  //数据面板描述 非必须
+      optionDes: {}, //外观面板描述
+      sourceDes: {}, //数据面板描述 非必须
       actionsDes: {}, //交互面板描述 非必须
     };
   },
@@ -43,6 +42,7 @@ export default {
 ```
 
 ::: details 样例-外观面板
+
 ```js
 import Type from "anov-ui/src/utils/panel/type";
 
@@ -52,8 +52,8 @@ export default {
       option: {
         input: "测试数据",
         select: 1,
-        color:""
-      }
+        color: "",
+      },
     };
   },
   getDataDes() {
@@ -79,24 +79,24 @@ export default {
         },
         color: {
           name: "颜色选择",
-          type: Type.color
+          type: Type.color,
         },
       },
     };
   },
 };
-
 ```
+
 > 呈现效果
 
 <img :src="$withBase('/images/guide/file/panel.png')" style="width:350px;" alt="外观面板">
-
 
 ::: danger 警告
 外观面板配置中 `数据`与`描述` 数据结构要对应，结构错误会导致外观面板显示异常。
 :::
 
 ::: details 样例-数据面板
+
 ```js
 export default {
   getData() {
@@ -114,7 +114,7 @@ export default {
     return {
       //数据面板：不支持数据映射的组件可不写sourceDes配置
       sourceDes: {
-        mapFields: [   
+        mapFields: [
           { field: "area", mapField: "area", des: "区域" },
           { field: "amount", mapField: "amount", des: "金额" },
           { field: "category", mapField: "category", des: "行业" },
@@ -124,6 +124,7 @@ export default {
   },
 };
 ```
+
 > 呈现效果
 
 <img :src="$withBase('/images/guide/file/source.png')" style="width:300px;" alt="数据面板">
@@ -162,6 +163,7 @@ export default {
   },
 };
 ```
+
 > 呈现效果
 
 <img :src="$withBase('/images/guide/file/action.png')" style="width:300px;" alt="交互面板">
@@ -177,7 +179,11 @@ export default {
 ```vue {3}
 <template>
   <div :style="{ ...size }" @click="click">
-    <div v-for="(item index) in data" :key="index" @click="onClick(index,item)">
+    <div
+      v-for="(item index) in data"
+      :key="index"
+      @click="onClick(index, item)"
+    >
       ....
     </div>
   </div>
@@ -234,34 +240,37 @@ export default {
 混入的*mixin/component.js*提供了组件接收的数据，以及通用函数。
 
 ::: details 组件数据
+
 ```js
 export default {
   props: {
-    option: {  //外观面板数据
-      type: Object
+    option: {
+      //外观面板数据
+      type: Object,
     },
     width: {
       type: String,
-      default: 440
+      default: 440,
     },
     height: {
       type: String,
-      default: 246
+      default: 246,
     },
-    theme: {   //当前主题
-      type: Object
+    theme: {
+      //当前主题
+      type: Object,
     },
-    data: {},   //数据
+    data: {}, //数据
   },
   computed: {
     size: function () {
       return {
         width: `${this.width}px`,
-        height: `${this.height}px`
+        height: `${this.height}px`,
       };
-    }
+    },
   },
-  methods:{
+  methods: {
     /**
      * 事件处理逻辑
      * @param {*} eventName 事件名称
@@ -269,56 +278,89 @@ export default {
      */
     handleEvent(eventName, params = {}) {
       //具体实现逻辑.....
-    }
-  }
-}
+    },
+  },
+};
 ```
+
 :::
 
 ## 导出组件
 
-导出组件分二步，首先在组件类别目录下的 *components.json* 文件中导出组件，第二步在 *src/components.json* 文件中导出这个类别的组件。我们这样做的目的，我们不需要在入口文件 *src/index.js*  手动
+导出组件分二步：
 
-* 在组件类别目录下的 *components.json* 文件中导出组件，格式如下：
+1. 首先在组件目录下的 components.json 文件中导出组件。
+
+2. 第二步在 src/components.json 文件中引入这个组件的 components.json 文件。
+
+这样做的目的，我们不需要在入口文件 src/index.js 中手动引入导出的组件，通过命令解析 src/components.json 配置的组件信息，动态生成组件入口文件。
+
+- 在组件目录下的 components.json 文件中导出组件，格式如下：
 
 ```json {11,22}
 {
-    "name": "表格",
-    "other": {
-        "author": "",
-        "company": "",
-        "email": "",
-        "remark": ""
+  "name": "表格",
+  "other": {
+    "author": "",
+    "company": "",
+    "email": "",
+    "remark": ""
+  },
+  "components": [
+    {
+      "name": "Table", //与视图文件中的name对应
+      "c_name": "常规表格",
+      "component": "table/normal/index.vue",
+      "config": "table/normal/config.js",
+      "view": {
+        "width": "440px",
+        "height": "246px",
+        "preview": ""
+      }
     },
-    "components": [
-        {
-            "name": "Table",   //与视图文件中的name对应
-            "c_name": "常规表格",
-            "component": "table/normal/index.vue", 
-            "config": "table/normal/config.js",
-            "view": {
-                "width": "440px",
-                "height": "246px",
-                "preview": ""
-            }
-        },
-        {
-            "name": "TopTable",   //与视图文件中的name对应
-            "c_name": "TOP表格",
-            "component": "table/top/index.vue",
-            "config": "table/top/config.js",
-            "view": {
-                "width": "440px",
-                "height": "246px",
-                "preview": ""
-            }
-        }
-    ]
+    {
+      "name": "TopTable", //与视图文件中的name对应
+      "c_name": "TOP表格",
+      "component": "table/top/index.vue",
+      "config": "table/top/config.js",
+      "view": {
+        "width": "440px",
+        "height": "246px",
+        "preview": ""
+      }
+    }
+  ]
 }
 ```
 
+- 第二步在 src/components.json 文件中引入这个组件的 components.json 文件，格式如下
+
+```json {6}
+[
+  {
+    "name": "列表",
+    "icon": "iconbiaoge",
+    "list": [
+      "components/table/components.json"
+      .....
+    ]
+  },
+  {
+    "name": "图表",
+    "icon": "icontubiao",
+    "list": [
+      "components/chart/line/components.json",
+      "components/chart/bar/components.json"
+    ]
+  },
+  .....
+]
+```
 
 ::: tip 提示
-添加一个组件，包含三个要点：配置文件(config.js)、视图文件(index.vue)、导出组件(components.json)。
-三要点文件命名建议参考以上规范，也可以根据用户习惯命名。
+如上 src/components.json 文件，定义了二个类别：列表、图表，相同类别的组件建议放到同一个 list 下面，也可以参考以上格式自己扩展类别。这里的分类目前仅作为开发阶段组件列表的呈现。
 :::
+
+## 写在最后
+
+添加一个组件，包含三个要点：配置文件(config.js)、视图文件(index.vue)、导出组件(components.json)。 三要点文件命名建议参考以上规范，也可以根据用户习惯命名。
