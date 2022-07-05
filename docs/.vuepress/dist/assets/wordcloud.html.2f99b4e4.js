@@ -1,0 +1,1 @@
+const t={key:"v-bdd2d042",path:"/components/chart/wordcloud.html",title:"\u8BCD\u4E91",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1649168746e3,contributors:[{name:"lfourg",email:"limengnew@163.com",commits:1}]},filePathRelative:"components/chart/wordcloud.md"};export{t as data};

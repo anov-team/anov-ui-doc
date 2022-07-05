@@ -1,0 +1,1 @@
+const e={key:"v-40079946",path:"/components/deck/header.html",title:"\u5934\u90E8\u88C5\u9970",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1649168746e3,contributors:[{name:"lfourg",email:"limengnew@163.com",commits:1}]},filePathRelative:"components/deck/header.md"};export{e as data};

@@ -13,7 +13,6 @@ lib
 .vscode
 .cache
 .temp
-dist
 examples/anov-ui
 examples/pages/en-US
 examples/pages/zh-CN
