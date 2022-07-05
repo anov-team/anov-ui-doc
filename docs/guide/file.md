@@ -277,9 +277,13 @@ export default {
 
 ## 导出组件
 
-导出组件分二步，首先在组件类别目录下的 *components.json* 文件中导出组件，第二步在 *src/components.json* 文件中导出这个类别的组件。我们这样做的目的，我们不需要在入口文件 *src/index.js*  手动
+导出组件分二步：
+1. 首先在组件目录下的 *components.json* 文件中导出组件。
+2. 第二步在 *src/components.json* 文件中引入这个组件的 *components.json* 文件。
 
-* 在组件类别目录下的 *components.json* 文件中导出组件，格式如下：
+这样做的目的，我们不需要在入口文件 *src/index.js* 中手动引入导出的组件，通过命令解析 *src/components.json* 配置的组件信息，动态生成组件入口文件。
+
+* 在组件目录下的 *components.json* 文件中导出组件，格式如下：
 
 ```json {11,22}
 {
@@ -317,8 +321,35 @@ export default {
 }
 ```
 
+* 第二步在 *src/components.json* 文件中引入这个组件的 *components.json* 文件，格式如下：
+
+```json {6}
+[
+  {
+    "name": "列表",
+    "icon": "iconbiaoge",
+    "list": [
+      "components/table/components.json"
+      .....
+    ]
+  },
+  {
+    "name": "图表",
+    "icon": "icontubiao",
+    "list": [
+      "components/chart/line/components.json",
+      "components/chart/bar/components.json"
+    ]
+  },
+  .....
+]
+```
 
 ::: tip 提示
+如上 *src/components.json* 文件，定义了二个类别：列表、图表，相同类别的组件建议放到同一个list下面，也可以参考以上格式自己扩展类别。这里的分类目前仅作为开发阶段组件列表的呈现。
+:::
+
+## 写在最后
+
 添加一个组件，包含三个要点：配置文件(config.js)、视图文件(index.vue)、导出组件(components.json)。
 三要点文件命名建议参考以上规范，也可以根据用户习惯命名。
-:::

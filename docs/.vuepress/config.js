@@ -15,7 +15,7 @@ module.exports = {
   theme: "@vuepress/theme-default",
   themeConfig: {
     logo: "favicon.ico",
-    repo: "https://github.com/anov-team/anov-ui-doc",
+    //repo: "https://github.com/anov-team/anov-ui-doc",
     navbar: [
       {
         text: "指南",
