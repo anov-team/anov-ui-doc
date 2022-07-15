@@ -1,1 +1,0 @@
-const e={key:"v-4995011e",path:"/components/chart/pie.html",title:"\u997C\u56FE",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1649168746e3,contributors:[{name:"lfourg",email:"limengnew@163.com",commits:1}]},filePathRelative:"components/chart/pie.md"};export{e as data};

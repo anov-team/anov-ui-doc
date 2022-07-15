@@ -1,1 +1,0 @@
-const t={key:"v-62954d98",path:"/components/chart/line.html",title:"\u6298\u7EBF\u56FE",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1649168746e3,contributors:[{name:"lfourg",email:"limengnew@163.com",commits:1}]},filePathRelative:"components/chart/line.md"};export{t as data};

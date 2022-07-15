@@ -13,7 +13,8 @@ type 字段支持以下类型：
 |            | [select](#select)               | 选择器，支持自定义下拉选项。                                     |
 |            | [slider](#slider)               | 滑动条，可以定制步长、最大值和最小值、后缀。                     |
 |            | [switch](#switch)               | 开关，支持是否展示文字状态。                                     |
-|            | [position](#position)           | 可以控制元素的水平或垂直位置。                                   |
+|            | [align](#align)                 | 可以控制元素水平或垂直位置的对齐方式。                           |
+|            | [position](#position)           | 可以控制元素的水平、垂直位置(主要用于控制图表图例的位置)。       |
 |            | [color](#color)                 | 颜色选择器，支持主题定义。                                       |
 |            | [bgcolor](#bgcolor)             | 颜色选择器，支持透明、纯色、渐变色、主题定义。                   |
 |            | [radioGroup](#radiogroup)       | 一组单选框                                                       |
@@ -61,7 +62,7 @@ let baseType = {
     description: "文本输入框，支持单行、多行模式。",
     files: [
       ...baseFiles,
-      { name: 'row', disName: '显示行数', type: 'number', required: false, defaultValue: '1', remark: '' },
+      { name: 'rows', disName: '显示行数', type: 'number', required: false, defaultValue: '1', remark: '' },
     ],
     value: '',
     img: `${imgBaseUrl}input.png`,
@@ -122,8 +123,22 @@ let baseType = {
       name: "开关",
       type: "switch"
     }
-  }, position: {
-    description: "可以控制元素的水平或垂直位置。",
+  }, 
+  align: {
+    description: "可以控制元素水平或垂直位置的对齐方式。",
+    files: [
+      ...baseFiles,
+       { name: 'mode', disName: '模式', type: 'string', required: false, defaultValue: 'h', remark: 'h：水平对齐方式，v：垂直对齐方式。' }
+    ],
+    value: 'left',
+    img: `${imgBaseUrl}align.png`,
+    code: {
+      name: "元素位置",
+      type: "align",
+      mode: 'h'
+    }
+  },position: {
+    description: "可以控制元素的水平、垂直位置(主要用于控制图表图例的位置)。",
     files: [
       ...baseFiles
     ],
@@ -143,9 +158,9 @@ let baseType = {
       ...baseFiles,
       { name: 'theme', disName: '主题配置', type: 'object', required: false, defaultValue: '', remark: '根据 theme 配置，初始化颜色默认值。',
       children:{
-        description:"theme对象属性",
+        description:"theme对象属性，具体参数主题应用模块",
         files:[
-          { name: 'key', disName: '主题字段', type: 'string', required: true, defaultValue: '', remark: '主题字段，具体参数主题模块帮助。'},
+          { name: 'key', disName: '主题字段', type: 'string', required: true, defaultValue: '', remark: '主题字段。'},
           { name: 'opacity', disName: '透明度', type: 'number', required: false, defaultValue: '1', remark: '颜色透明度，0-1的值。'}
         ]
       }}  
@@ -167,7 +182,7 @@ let baseType = {
       ...baseFiles,
       { name: 'theme', disName: '主题配置', type: 'object', required: false, defaultValue: '', remark: '根据 theme 配置，初始化颜色默认值。',
       children:{
-        description:"theme对象属性",
+        description:"theme对象属性，具体参数主题应用模块",
         files:[
           { name: 'type', disName: '类型', type: 'string', required: false, defaultValue: 'linear', remark: 'linear：线性渐变，radial：径向渐变'},
           { name: 'degree', disName: '旋转角度', type: 'number', required: false, defaultValue: '0', remark: '旋转角度'},
@@ -452,7 +467,7 @@ let groupType = {
 
 let customType={
   code:{
-    description: "自定义内容，返回一个 render 函数。",
+    description: "自定义内容，返回值为一个标准的 render 函数。",
     files: [
       ...baseFiles
     ],
@@ -488,6 +503,10 @@ let customType={
 ## switch
 
 <guide-type-detail :config="baseType.switch1"  :src="$withBase(baseType.switch1.img)"/>
+
+## align
+
+<guide-type-detail :config="baseType.align"  :src="$withBase(baseType.align.img)"/>
 
 ## position
 

@@ -1,1 +1,0 @@
-const e={key:"v-1b623e0c",path:"/guide/dirtree.html",title:"\u76EE\u5F55\u7ED3\u6784",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1648890668e3,contributors:[{name:"lfourg",email:"limengnew@163.com",commits:2}]},filePathRelative:"guide/dirtree.md"};export{e as data};

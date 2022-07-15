@@ -1,1 +1,0 @@
-const t={key:"v-1bfa47c2",path:"/components/chart/pictograph.html",title:"\u8C61\u5F62\u67F1\u56FE",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1649168746e3,contributors:[{name:"lfourg",email:"limengnew@163.com",commits:1}]},filePathRelative:"components/chart/pictograph.md"};export{t as data};

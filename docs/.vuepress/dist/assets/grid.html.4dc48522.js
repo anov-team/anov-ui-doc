@@ -1,1 +1,0 @@
-const e={key:"v-e95ee83e",path:"/components/control/grid.html",title:"\u5E03\u5C40",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1649168746e3,contributors:[{name:"lfourg",email:"limengnew@163.com",commits:1}]},filePathRelative:"components/control/grid.md"};export{e as data};

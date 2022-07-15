@@ -1,1 +1,0 @@
-const t={key:"v-3bfbad91",path:"/components/chart/gauge.html",title:"\u4EEA\u8868\u76D8",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1649168746e3,contributors:[{name:"lfourg",email:"limengnew@163.com",commits:1}]},filePathRelative:"components/chart/gauge.md"};export{t as data};

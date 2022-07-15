@@ -1,1 +1,0 @@
-const e={key:"v-94ae1d9c",path:"/components/map/echarts.html",title:"2D \u5730\u56FE",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1649168746e3,contributors:[{name:"lfourg",email:"limengnew@163.com",commits:1}]},filePathRelative:"components/map/echarts.md"};export{e as data};

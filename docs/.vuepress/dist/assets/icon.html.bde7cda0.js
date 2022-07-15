@@ -1,1 +1,0 @@
-const e={key:"v-2313815a",path:"/components/deck/icon.html",title:"\u56FE\u6807",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1649168746e3,contributors:[{name:"lfourg",email:"limengnew@163.com",commits:1}]},filePathRelative:"components/deck/icon.md"};export{e as data};
