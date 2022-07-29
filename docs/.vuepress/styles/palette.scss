@@ -26,12 +26,12 @@ pre.vue-container {
 }
   
  #main-title{
-   display:none;
+   //display:none;
  }  
     
-.description{
-      display:none;
-}
+ .home .hero .description {
+  font-size: 18px;
+ }
 .theme-default-content ul {
   padding-left: 2em;
 }

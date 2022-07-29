@@ -22,6 +22,7 @@ let props = defineProps({
   data: [],
 });
 let basePath = "https://lfourg.github.io/anov-ui-pro/#/docs/";
+basePath = "http://localhost:8085/#/docs/"
 let data = ref(props.data);
 
 function load(item) {

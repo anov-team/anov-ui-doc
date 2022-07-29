@@ -4,11 +4,13 @@
 
 分组属性 _group_ 提供以下配置项
 
-| 字段名 | 含义     | 类型    | 是否必须 | 默认值 | 备注   |
-| ------ | -------- | ------- | -------- | ------ | ------ |
-| name   | 组名称   | string  | true     |        |        |
-| expand | 是否展开 | boolean | false    | false  |        |
-| hide   | 隐藏分组 | boolean | false    | false  | 非必须 |
+| 字段名  | 含义         | 类型     | 是否必须 | 默认值 | 备注   |
+| ------- | ------------ | -------- | -------- | ------ | ------ |
+| name    | 组名称       | string   | true     |        |        |
+| expand  | 是否展开     | boolean  | false    | false  |        |
+| depends | 控制组的显隐 | function | false    |        | 非必须 |
+
+
 
 ## 简单分组
 
@@ -70,7 +72,7 @@ export default {
 
 :chestnut: 提供 **基础属性组** 下面嵌套 **子分组**，基础属性组、子分组默认都展开。
 
-```js {22-25,31-34,46-48}
+```js {22-25,31-38,50-52}
 export default {
   getData() {
     return {
@@ -103,7 +105,11 @@ export default {
           child: {
             group: {
               name: "子分组",
-              expand: true, //分组是否展开，默认不展开
+              expand: true, // 分组是否展开，默认不展开
+              depends:({rootOption,rootDes})=>{
+                // 当父级number>50的时候才显示此分组
+                return rootOption.base.number > 50 
+              }
             },
             color: {
               name: "颜色选择",

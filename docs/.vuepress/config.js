@@ -16,6 +16,8 @@ module.exports = {
   themeConfig: {
     logo: "favicon.ico",
     repo: "",
+    search: true,  //开启搜索
+    searchMaxSuggestions: 8,
     navbar: [
       {
         text: "指南",
@@ -42,6 +44,19 @@ module.exports = {
             "/guide/type.md",
             "/guide/group.md",
             "/guide/theme.md",
+            {
+              text: "标准",
+              children: [
+                {
+                  text: "图表组件",
+                  children: [
+                    "/guide/standard/chart/axis.md", 
+                    "/guide/standard/chart/noAxis.md"
+                  ]
+                },
+                "/guide/standard/other.md"
+              ]
+            }
           ],
         },
       ],
@@ -59,11 +74,10 @@ module.exports = {
                 "/components/chart/line.md",
                 "/components/chart/bar.md",
                 "/components/chart/pie.md",
-                "/components/chart/radar.md",
-                "/components/chart/gauge.md",
                 "/components/chart/pictograph.md",
-                "/components/chart/wordcloud.md",
-                "/components/chart/bubble.md",
+                "/components/chart/calendar.md",
+                "/components/chart/gauge.md",
+                "/components/chart/radar.md",
                 "/components/chart/other.md",
               ],
             },
@@ -76,16 +90,12 @@ module.exports = {
               ],
             },
             {
-              text: "列表",
-              children: [
-                "/components/list/table.md",
-                "/components/list/list.md",
-              ],
+              text: "媒体",
+              children: ["/components/video/img.md", "/components/video/video.md"],
             },
             {
-              text: "图片",
+              text: "装饰",
               children: [
-                "/components/deck/img.md",
                 "/components/deck/header.md",
                 "/components/deck/title.md",
                 "/components/deck/streamer.md",
@@ -94,22 +104,24 @@ module.exports = {
               ],
             },
             {
-              text: "媒体",
-              children: ["/components/video/video.md"],
+              text: "列表",
+              children: [
+                "/components/list/table.md",
+                "/components/list/list.md",
+              ],
             },
             {
               text: "地图",
-              children: ["/components/map/echarts.md"],
+              children: ["/components/map/map.md",
+                "/components/map/3D.md"],
             },
             {
               text: "控件",
               children: [
+                "/components/control/select.md",
                 "/components/control/btn.md",
-                "/components/control/tab.md",
-                "/components/control/timeline.md",
-                "/components/control/dropdown.md",
-                "/components/control/iframe.md",
-                "/components/control/grid.md",
+                "/components/control/swiper.md",
+                "/components/control/other.md",
               ],
             },
           ],

@@ -22,6 +22,7 @@ type 字段支持以下类型：
 |            | [checkbox](#checkbox)           | 复选框，支持是否展示文字状态。                                   |
 |            | [image](#image)                 | 图片上传                                                         |
 |            | [media](#media)                 | 媒体资源上传                                                     |
+|            | [upload](#upload)               | 资源上传                                                     |
 |            | [unit](#unit)                   | 单位，支持自定义单位项。                                         |
 |            | [icon](#icon)                   | 图标选择器                                                       |
 |            | [code](#code)                   | 自定义内容，返回一个 render 函数。                               |
@@ -69,7 +70,7 @@ let baseType = {
     code: {
       name: "输入框",
       type: "input",
-      row: 3
+      rows: 3
     }
   },
   select: {
@@ -281,7 +282,7 @@ let baseType = {
     description: "图片上传",
     files: [
       ...baseFiles
-    ],
+      ],
     value: '',
     img: `${imgBaseUrl}image.png`,
     code: {
@@ -292,7 +293,9 @@ let baseType = {
   media: {
     description: "媒体资源上传",
     files: [
-      ...baseFiles
+      ...baseFiles,
+      { name: 'text', disName: '按钮文字', type: 'string', required: false, defaultValue: '文件上传', remark: ''},
+      { name: 'accept', disName: '接受上传的文件类型', type: 'string', required: false, defaultValue: 'video/*', remark: ''}
     ],
     value: '',
     img: `${imgBaseUrl}media.png`,
@@ -301,11 +304,26 @@ let baseType = {
       type: "media",
     }
   },
+  upload: {
+    description: "资源上传",
+    files: [
+      ...baseFiles,
+      { name: 'text', disName: '按钮文字', type: 'string', required: false, defaultValue: '文件上传', remark: ''},
+      { name: 'accept', disName: '文件类型', type: 'string', required: false, defaultValue: '', remark: '接受上传的文件类型'},
+      { name: 'multiple', disName: '多文件上传', type: 'boolean', required: false, defaultValue: false, remark: '是否支持多文件上传'}
+    ],
+    value: '',
+    img: `${imgBaseUrl}upload.png`,
+    code: {
+      name: "文件上传",
+      type: "upload",
+    }
+  },
   unit: {
     description: "单位，支持自定义单位项。",
     files: [
       ...baseFiles,
-      { name: 'options', disName: '选项列表', type: 'Array', required: true, defaultValue: '', remark: '每一项都包含text和value，text表示显示文本，value表示文本的值。' }
+      { name: 'options', disName: '选项列表', type: 'Array', required: true, defaultValue: '[{value:"%",text:"%"},{value:"px",text:"px"}]', remark: '每一项都包含text和value，text表示显示文本，value表示文本的值。' }
     ],
     value: {
       value: 50,
@@ -314,17 +332,7 @@ let baseType = {
     img: `${imgBaseUrl}unit.png`,
     code: {
       name: "单位",
-      type: "unit",
-      options: [
-        {
-          "value": 1,
-          "text": "%"
-        },
-        {
-          "value": 2,
-          "text": "px"
-        }
-      ]
+      type: "unit"
     }
   },
   icon: {
@@ -539,6 +547,10 @@ let customType={
 ## media
 
 <guide-type-detail :config="baseType.media"  :src="$withBase(baseType.media.img)"/>
+
+## upload
+
+<guide-type-detail :config="baseType.upload"  :src="$withBase(baseType.upload.img)"/>
 
 ## unit
 
