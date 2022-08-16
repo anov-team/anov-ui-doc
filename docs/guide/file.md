@@ -230,7 +230,7 @@ export default {
     onClick(index, params) {
       //第一个参数click对应的是交互描述中的 event.name
       //第二个参数中 index(行索引)对应的是交互描述中 全局参数映射 中的index，data是当前数据行的值
-      this.handleEvent("click", { index: index + 1, data: params });
+      this.on("click", { index: index + 1, data: params });
     },
   },
 };
@@ -276,7 +276,7 @@ export default {
      * @param {*} eventName 事件名称
      * @param {*} params 参数
      */
-    handleEvent(eventName, params = {}) {
+    on(eventName, params = {}) {
       //具体实现逻辑.....
     },
   },

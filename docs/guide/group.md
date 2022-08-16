@@ -4,13 +4,29 @@
 
 分组属性 _group_ 提供以下配置项
 
-| 字段名  | 含义         | 类型     | 是否必须 | 默认值 | 备注   |
-| ------- | ------------ | -------- | -------- | ------ | ------ |
-| name    | 组名称       | string   | true     |        |        |
-| expand  | 是否展开     | boolean  | false    | false  |        |
-| depends | 控制组的显隐 | function | false    |        | 非必须 |
+| 字段名  | 含义         | 类型     | 是否必须 | 默认值 | 备注                                           |
+| ------- | ------------ | -------- | -------- | ------ | ---------------------------------------------- |
+| name    | 组名称       | string   | true     |        |                                                |
+| expand  | 是否展开     | boolean  | false    | false  |                                                |
+| depends | 控制组的显隐 | function | false    |        | 函数返回值为 true 显示该分组，false 隐藏该分组 |
 
+depends 函数参数
+| 字段名 | 含义 | 类型 | 备注 |
+| ------- | ------------ | -------- | ------ |
+| rootOption | 样式配置信息 | object | |
+| rootDes | 样式描述信息 | object | |
 
+:chestnut: depends 函数具体使用：
+
+```js {3-6}
+group: {
+  name: "组名称",
+  depends: ({ rootOption, rootDes }) => {
+    //返回值为true：显示该分组  false：隐藏该分组
+    return rootOption[attribute] > value;
+  },
+},
+```
 
 ## 简单分组
 
@@ -106,10 +122,10 @@ export default {
             group: {
               name: "子分组",
               expand: true, // 分组是否展开，默认不展开
-              depends:({rootOption,rootDes})=>{
+              depends: ({ rootOption, rootDes }) => {
                 // 当父级number>50的时候才显示此分组
-                return rootOption.base.number > 50 
-              }
+                return rootOption.base.number > 50;
+              },
             },
             color: {
               name: "颜色选择",

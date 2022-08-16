@@ -12,7 +12,7 @@
     </tr>
     <template v-for="(item, index) in config.files" :key="index">
       <tr>
-        <td>{{ item.name }}</td>
+        <td v-html="item.name"></td>
         <td>{{ item.disName }}</td>
         <td>{{ item.type }}</td>
         <td>{{ item.required }}</td>
@@ -21,7 +21,7 @@
       </tr>
       <template v-if="item.children">
         <tr>
-          <td colspan="6" style="font-weight:bold;">{{ item.children.description }}</td>
+          <td colspan="6" v-html="item.children.description"></td>
         </tr>
         <tr v-for="(citem, cindex) in item.children.files" :key="cindex">
           <td>{{ citem.name }}</td>

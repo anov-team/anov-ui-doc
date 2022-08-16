@@ -44,19 +44,7 @@ module.exports = {
             "/guide/type.md",
             "/guide/group.md",
             "/guide/theme.md",
-            {
-              text: "标准",
-              children: [
-                {
-                  text: "图表组件",
-                  children: [
-                    "/guide/standard/chart/axis.md", 
-                    "/guide/standard/chart/noAxis.md"
-                  ]
-                },
-                "/guide/standard/other.md"
-              ]
-            }
+            "/guide/standard.md"
           ],
         },
       ],

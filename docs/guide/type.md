@@ -22,7 +22,7 @@ type 字段支持以下类型：
 |            | [checkbox](#checkbox)           | 复选框，支持是否展示文字状态。                                   |
 |            | [image](#image)                 | 图片上传                                                         |
 |            | [media](#media)                 | 媒体资源上传                                                     |
-|            | [upload](#upload)               | 资源上传                                                     |
+|            | [upload](#upload)               | 资源上传                                                         |
 |            | [unit](#unit)                   | 单位，支持自定义单位项。                                         |
 |            | [icon](#icon)                   | 图标选择器                                                       |
 |            | [code](#code)                   | 自定义内容，返回一个 render 函数。                               |
@@ -36,7 +36,8 @@ type 字段支持以下类型：
 <script setup>
 
 let baseFiles=[{name:'name',disName:'名称',type:'string',required:false,defaultValue:'',remark:''},
-    {name:'type',disName:'类型',type:'string',required:true,defaultValue:'',remark:''}];
+    {name:'type',disName:'类型',type:'string',required:true,defaultValue:'',remark:''},
+    {name:'<a href="#属性说明">depends</a>',disName:'依赖',type:'object | function',required:false,defaultValue:'',remark:'控制当前配置项的显隐'}];
 let numFiles=[ {name:'max',disName:'最大值',type:'number',required:false,defaultValue:'',remark:''},
     {name:'min',disName:'最小值',type:'number',required:false,defaultValue:'',remark:''},
     {name:'step',disName:'步长',type:'number',required:false,defaultValue:'',remark:''},
@@ -159,7 +160,7 @@ let baseType = {
       ...baseFiles,
       { name: 'theme', disName: '主题配置', type: 'object', required: false, defaultValue: '', remark: '根据 theme 配置，初始化颜色默认值。',
       children:{
-        description:"theme对象属性，具体参数主题应用模块",
+        description:'theme对象配置，具体参考<a style="font-weight:bold;" href="/anov-ui-doc/guide/theme.html#主题数据结构"> 主题应用 </a>模块',
         files:[
           { name: 'key', disName: '主题字段', type: 'string', required: true, defaultValue: '', remark: '主题字段。'},
           { name: 'opacity', disName: '透明度', type: 'number', required: false, defaultValue: '1', remark: '颜色透明度，0-1的值。'}
@@ -183,7 +184,7 @@ let baseType = {
       ...baseFiles,
       { name: 'theme', disName: '主题配置', type: 'object', required: false, defaultValue: '', remark: '根据 theme 配置，初始化颜色默认值。',
       children:{
-        description:"theme对象属性，具体参数主题应用模块",
+        description:'theme对象配置，具体参考<a style="font-weight:bold;" href="/anov-ui-doc/guide/theme.html#主题数据结构"> 主题应用 </a>模块',
         files:[
           { name: 'type', disName: '类型', type: 'string', required: false, defaultValue: 'linear', remark: 'linear：线性渐变，radial：径向渐变'},
           { name: 'degree', disName: '旋转角度', type: 'number', required: false, defaultValue: '0', remark: '旋转角度'},
@@ -583,3 +584,57 @@ let customType={
 ## textStyle
 
 <guide-type-detail :config="groupType.textStyle"  :src="$withBase(groupType.textStyle.img)"/>
+
+## 属性说明
+
+### depends
+
+#### object
+当 _depends_ 值为对象时，可以配置 **同组** 下的多个属性，当配置下的所有条件都满足时，才显示该配置项。
+
+:chestnut: 当 _attr1_ == _2 && _attr2_ == _true_ ，才会显示 _名称3_ 配置项。
+
+```js {14-17}
+{
+  attr1:{
+    name: "名称1",
+    type:"select",
+    options:[{text:"项1",value:1},{text:"项2",value:2}]
+  },
+  attr2:{
+    name: "名称2",
+    type:"switch"
+  },
+  attr3:{
+    name: "名称3",
+    type:"type3",
+    depends: {
+      attr1:2,
+      attr2:true
+    },
+  },
+}
+```
+
+#### function
+
+当需要 **跨组(group)** 配置项的值来控制当前配置项的显隐时，请使用函数的方式。
+
+函数参数如下：
+| 字段名 | 含义 | 类型 | 备注 |
+| ------- | ------------ | -------- | ------ |
+| option | 当前组下的样式配置信息 | object | |
+| des | 当前组下的样式描述信息 | object | |
+| rootOption | 样式配置信息 | object | |
+| rootDes | 样式描述信息 | object | |
+
+```js
+{
+  name: "名称",
+  type:"typeName",
+  depends: ({option, des, rootOption, rootDes }) => {
+    //返回值为true：显示该配置项  false：隐藏该配置项
+    return option[attribute] > value;
+  },
+},
+```
